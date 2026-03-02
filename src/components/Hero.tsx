@@ -65,7 +65,8 @@ export default function Hero() {
                     transition={{ delay: 0.45, duration: 0.7, ease: "easeOut" }}
                     className="mt-10"
                 >
-                    <button
+                    <a
+                        href="#contact"
                         className="group relative inline-flex items-center gap-2.5 rounded-full bg-gold px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:scale-105 hover:brightness-110 animate-pulse-glow"
                     >
                         <Download className="h-4 w-4" />
@@ -73,7 +74,7 @@ export default function Hero() {
 
                         {/* Shimmer overlay */}
                         <span className="pointer-events-none absolute inset-0 rounded-full bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shimmer bg-[length:200%_100%]" />
-                    </button>
+                    </a>
                 </motion.div>
             </div>
         </section>

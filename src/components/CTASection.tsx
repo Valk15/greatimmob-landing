@@ -79,7 +79,7 @@ export default function CTASection() {
     }
 
     return (
-        <section className="relative bg-slate-950 py-32 overflow-hidden">
+        <section id="contact" className="relative bg-slate-950 py-32 overflow-hidden">
             {/* Subtle radial glow behind the card */}
             <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
                 <div className="h-[500px] w-[700px] rounded-full bg-amber-600/10 blur-3xl" />
