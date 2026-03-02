@@ -1,111 +1,81 @@
-"use client";
+'use client';
 
-import { motion } from "framer-motion";
-import { AlertTriangle, Banknote, ShieldAlert, type LucideIcon } from "lucide-react";
+import { motion } from 'framer-motion';
+import { AlertTriangle, Banknote, ShieldAlert } from 'lucide-react';
 
-/* ── Data ─────────────────────────────────────────────── */
-
-interface FearCard {
-    icon: LucideIcon;
-    iconColor: string;
-    title: string;
-    text: string;
-}
-
-const cards: FearCard[] = [
-    {
-        icon: AlertTriangle,
-        iconColor: "text-red-600",
-        title: "Fermeture Administrative",
-        text: "Les autorités ferment désormais les établissements non classés sous 48h.",
-    },
-    {
-        icon: Banknote,
-        iconColor: "text-amber-600",
-        title: "Amendes Lourdes",
-        text: "Des pénalités financières s'appliquent pour chaque nuitée non déclarée.",
-    },
-    {
-        icon: ShieldAlert,
-        iconColor: "text-slate-700",
-        title: "Risque Squatteurs",
-        text: "Sans contrat officiel, vous n'avez aucune protection juridique pour expulser.",
-    },
-];
-
-/* ── Animation variants ───────────────────────────────── */
-
-const containerVariants = {
-    hidden: {},
-    visible: {
-        transition: { staggerChildren: 0.2 },
-    },
-};
-
-const cardVariants = {
-    hidden: { opacity: 0, y: 32 },
-    visible: {
-        opacity: 1,
-        y: 0,
-    },
-};
-
-/* ── Component ────────────────────────────────────────── */
-
-export default function FearSection() {
+const FearSection = () => {
     return (
-        <section className="bg-slate-50 py-24">
-            <div className="mx-auto max-w-6xl px-6">
-                {/* ── Header ───────────────────────────────── */}
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-80px" }}
-                    transition={{ duration: 0.6 }}
-                    className="mx-auto mb-16 max-w-2xl text-center"
-                >
-                    <h2 className="font-heading text-4xl font-bold leading-tight text-[#0F172A]">
-                        L&apos;Ère du Flou Juridique est Terminée.
-                    </h2>
-                    <p className="mt-4 text-lg leading-relaxed text-slate-600">
-                        Louer sans conformité n&apos;est plus une astuce. C&apos;est un
-                        risque majeur.
+        <section className="w-full bg-slate-50 py-24">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+                <div className="text-center mb-16">
+                    <motion.h2
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        className="text-4xl md:text-5xl font-bold text-slate-900 font-serif mb-4"
+                    >
+                        L'Ère du Flou Juridique est Terminée.
+                    </motion.h2>
+                    <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto">
+                        Louer sans conformité n'est plus une astuce. C'est un risque majeur.
                     </p>
-                </motion.div>
+                </div>
 
-                {/* ── Cards Grid ───────────────────────────── */}
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-60px" }}
-                    className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3"
-                >
-                    {cards.map((card) => {
-                        const Icon = card.icon;
-                        return (
-                            <motion.div
-                                key={card.title}
-                                variants={cardVariants}
-                                transition={{ duration: 0.6, ease: "easeOut" }}
-                                className="group rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-xl"
-                            >
-                                <div
-                                    className={`mb-5 flex h-12 w-12 items-center justify-center rounded-xl bg-slate-50 ${card.iconColor} transition-colors`}
-                                >
-                                    <Icon className="h-6 w-6" />
-                                </div>
-                                <h3 className="mb-2 text-lg font-semibold text-slate-900">
-                                    {card.title}
-                                </h3>
-                                <p className="text-sm leading-relaxed text-slate-500">
-                                    {card.text}
-                                </p>
-                            </motion.div>
-                        );
-                    })}
-                </motion.div>
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    {/* Card 1 */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.1 }}
+                        viewport={{ once: true }}
+                        className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-shadow duration-300"
+                    >
+                        <div className="w-12 h-12 bg-red-50 rounded-xl flex items-center justify-center mb-6">
+                            <AlertTriangle className="w-6 h-6 text-red-600" />
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-3">Fermeture Administrative</h3>
+                        <p className="text-slate-600 leading-relaxed">
+                            Les autorités ferment désormais les établissements non classés sous 48h.
+                        </p>
+                    </motion.div>
+
+                    {/* Card 2 */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.2 }}
+                        viewport={{ once: true }}
+                        className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-shadow duration-300"
+                    >
+                        <div className="w-12 h-12 bg-amber-50 rounded-xl flex items-center justify-center mb-6">
+                            <Banknote className="w-6 h-6 text-amber-600" />
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-3">Amendes Lourdes</h3>
+                        <p className="text-slate-600 leading-relaxed">
+                            Des pénalités financières s'appliquent pour chaque nuitée non déclarée.
+                        </p>
+                    </motion.div>
+
+                    {/* Card 3 */}
+                    <motion.div
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ delay: 0.3 }}
+                        viewport={{ once: true }}
+                        className="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-shadow duration-300"
+                    >
+                        <div className="w-12 h-12 bg-slate-100 rounded-xl flex items-center justify-center mb-6">
+                            <ShieldAlert className="w-6 h-6 text-slate-700" />
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-3">Risque Squatteurs</h3>
+                        <p className="text-slate-600 leading-relaxed">
+                            Sans contrat officiel, vous n'avez aucune protection juridique pour expulser.
+                        </p>
+                    </motion.div>
+                </div>
             </div>
         </section>
     );
-}
+};
+
+export default FearSection;
