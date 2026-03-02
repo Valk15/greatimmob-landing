@@ -14,10 +14,10 @@ const FearSection = () => {
                         viewport={{ once: true }}
                         className="text-4xl md:text-5xl font-bold text-slate-900 font-serif mb-4"
                     >
-                        L'Ère du Flou Juridique est Terminée.
+                        L&apos;Ère du Flou Juridique est Terminée.
                     </motion.h2>
                     <p className="text-lg text-slate-600 font-light max-w-2xl mx-auto">
-                        Louer sans conformité n'est plus une astuce. C'est un risque majeur.
+                        Louer sans conformité n&apos;est plus une astuce. C&apos;est un risque majeur.
                     </p>
                 </div>
 
@@ -52,7 +52,7 @@ const FearSection = () => {
                         </div>
                         <h3 className="text-xl font-bold text-slate-900 mb-3">Amendes Lourdes</h3>
                         <p className="text-slate-600 leading-relaxed">
-                            Des pénalités financières s'appliquent pour chaque nuitée non déclarée.
+                            Des pénalités financières s&apos;appliquent pour chaque nuitée non déclarée.
                         </p>
                     </motion.div>
 
@@ -69,7 +69,7 @@ const FearSection = () => {
                         </div>
                         <h3 className="text-xl font-bold text-slate-900 mb-3">Risque Squatteurs</h3>
                         <p className="text-slate-600 leading-relaxed">
-                            Sans contrat officiel, vous n'avez aucune protection juridique pour expulser.
+                            Sans contrat officiel, vous n&apos;avez aucune protection juridique pour expulser.
                         </p>
                     </motion.div>
                 </div>

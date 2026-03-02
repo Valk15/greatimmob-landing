@@ -86,6 +86,7 @@ export default function SolutionSection() {
 
                         {/* The Image Container */}
                         <div className="relative w-full h-full rounded-lg overflow-hidden border border-white/10 shadow-2xl bg-slate-800">
+                            {/* eslint-disable-next-line @next/next/no-img-element */}
                             <img
                                 src="/guide-cover.png"
                                 alt="Guide Conformité 2026"
