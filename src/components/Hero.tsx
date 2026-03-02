@@ -4,17 +4,6 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import { Download } from "lucide-react";
 
-/* ── Animation variants ───────────────────────────────── */
-
-const fadeUp = {
-    hidden: { opacity: 0, y: 24 },
-    visible: (i: number) => ({
-        opacity: 1,
-        y: 0,
-        transition: { delay: 0.15 * i, duration: 0.7, ease: "easeOut" },
-    }),
-};
-
 /* ── Hero Component ───────────────────────────────────── */
 
 export default function Hero() {
@@ -37,10 +26,9 @@ export default function Hero() {
             <div className="relative z-10 mx-auto max-w-3xl px-6 text-center">
                 {/* Badge */}
                 <motion.div
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    custom={0}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0, duration: 0.7, ease: "easeOut" }}
                 >
                     <span className="inline-block rounded-full border border-gold/60 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-gold">
                         Nouvelle Législation 2026
@@ -49,10 +37,9 @@ export default function Hero() {
 
                 {/* Headline */}
                 <motion.h1
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    custom={1}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.15, duration: 0.7, ease: "easeOut" }}
                     className="mt-8 font-heading text-4xl font-bold leading-tight text-foreground sm:text-5xl lg:text-6xl"
                 >
                     Propriétaires à Agadir&nbsp;:
@@ -62,10 +49,9 @@ export default function Hero() {
 
                 {/* Subhead */}
                 <motion.p
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    custom={2}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.3, duration: 0.7, ease: "easeOut" }}
                     className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg"
                 >
                     Les lois ont changé. La conformité n&apos;est plus une option.
@@ -74,10 +60,9 @@ export default function Hero() {
 
                 {/* CTA Button */}
                 <motion.div
-                    variants={fadeUp}
-                    initial="hidden"
-                    animate="visible"
-                    custom={3}
+                    initial={{ opacity: 0, y: 24 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: 0.45, duration: 0.7, ease: "easeOut" }}
                     className="mt-10"
                 >
                     <button
