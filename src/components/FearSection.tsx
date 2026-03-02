@@ -47,7 +47,6 @@ const cardVariants = {
     visible: {
         opacity: 1,
         y: 0,
-        transition: { duration: 0.6, ease: "easeOut" },
     },
 };
 
@@ -88,6 +87,7 @@ export default function FearSection() {
                             <motion.div
                                 key={card.title}
                                 variants={cardVariants}
+                                transition={{ duration: 0.6, ease: "easeOut" }}
                                 className="group rounded-2xl border border-slate-100 bg-white p-8 shadow-sm transition-shadow duration-300 hover:shadow-xl"
                             >
                                 <div
